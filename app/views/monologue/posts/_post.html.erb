@@ -6,7 +6,7 @@
 	  <h2><%= link_to revision.title, revision.full_url, :title => revision.title %></h2>
 	</header>  	
     <div id="post-content_<%= revision.id %>" class="content post-content" data-monologue="content">
-      <%= truncate_html(revision.content, :length => 400, :omission => '...') %>
+      <%= truncate_html(revision.content, :length => 200, :omission => '...') %>
     </div>
     <footer class="revision-footer">
 	  <div class="posted">
@@ -27,7 +27,6 @@
 	<script type="text/javascript">
 	  (function($){
     	$('#post-content_<%= revision.id %> img:first').clone().appendTo(".post-image_<%= revision.id %>");
-    	$('#post-content_<%= revision.id %> img:first').parent().parent().remove();
     	$('#post-content_<%= revision.id %> img:first').parent().remove();
       })(jQuery);
 	</script>	
