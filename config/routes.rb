@@ -1,5 +1,6 @@
 Monologue::Engine.routes.draw do
   root :to =>  "posts#index"
+  match "/jevvel-home", :to => 'posts#blank_index', :as => "post_page"
   match "/page/:page", :to =>  "posts#index", :as =>  "posts_page"
   match "/feed" => "posts#feed", :as =>  "feed", :defaults => {:format => :rss}
 

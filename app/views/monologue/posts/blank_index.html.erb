@@ -1,0 +1,36 @@
+<div id="first-posts" class="row">
+  <div class="span12 first-post-background">
+  	<div class="row" style="margin-bottom:0;">
+	  <div id="first-post-image" class="span6"></div>
+	  <div class="span6">
+	  	<div class="first-post-content">
+	  	  <div id="first-post-title"></div>
+	  	  <div id="first-post-body" style="font-size: 14px!important"></div>
+	  	  <div id="first-post-footer" style="font-size: 11px!important"></div>
+	  	</div>
+	  </div>  		
+  	</div>
+  </div>
+</div>
+<div id="posts" class="row">  
+  <%= render @posts %>
+</div>
+
+<div id="posts-pagination" class="row">
+  <div class="span12">
+  	<% if @page %>
+	  <%= render :partial => "pagination" %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function($){
+	$('#posts .span3:first a:first').clone().appendTo("#first-post-image");
+	$('#posts .span3:first h2:first').clone().appendTo("#first-post-title");
+	$('#posts .span3:first .post-content').clone().appendTo("#first-post-body");
+	$('#posts .span3:first .revision-footer').clone().appendTo("#first-post-footer");
+	$('#posts .span3:first').remove();
+  })(jQuery);
+</script>
+

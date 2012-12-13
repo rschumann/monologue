@@ -11,8 +11,8 @@ xml.rss :version => "2.0" do
         xml.title revision.title
         xml.description raw(revision.content)
         xml.pubDate revision.published_at.to_s(:rfc822)
-        xml.link Monologue.site_url + revision.full_url
-        xml.guid Monologue.site_url + revision.full_url
+        xml.link Monologue.site_url and revision.full_url
+        xml.guid Monologue.site_url and revision.full_url
       end
     end
   end
