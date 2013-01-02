@@ -7,7 +7,7 @@
   <%= render 'layouts/monologue/application/head' %>
 </head>
 <body>
-  
+  <%= render :partial => 'spree/shared/menue_nav_blog' %>
   <header id="header" class="container" data-hook>    
     <% flash.each do |name, msg| %>
       <div class="flash-notice">
